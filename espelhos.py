@@ -238,62 +238,66 @@ def remove_portas(g):
         for j in range(19):
             g[i][j] = 0
 
-g = Grafo(19)
+            
+            
+if __name__ == '__main__':
+            
+    g = Grafo(19)
 
-while(True):
-    entrada = input('Sala de entrada: ')
-    saida = input('Sala de saída: ')
-    entrada = entrada.upper()
-    saida = saida.upper()
-    # print(ord(entra
-    if(len(entrada) == 1 and len(saida) == 1 and (ord(entrada) - 64) < 20 and (ord(saida) - 64) < 20):
-        break
-    else:
-        print('Digite opções válidas.')
+    while(True):
+        entrada = input('Sala de entrada: ')
+        saida = input('Sala de saída: ')
+        entrada = entrada.upper()
+        saida = saida.upper()
+        # print(ord(entra
+        if(len(entrada) == 1 and len(saida) == 1 and (ord(entrada) - 64) < 20 and (ord(saida) - 64) < 20):
+            break
+        else:
+            print('Digite opções válidas.')
 
-construir_salas_fechadas(g)
+    construir_salas_fechadas(g)
 
-print(' ')
-print('============== MATRIZ DA SALA FECHADA ==============')
-print(' ')
+    print(' ')
+    print('============== MATRIZ DA SALA FECHADA ==============')
+    print(' ')
 
-g.mostra_matriz()
+    g.mostra_matriz()
 
-print(' ')
-print('============== TABELA DA SALA FECHADA ==============')
-print(' ')
+    print(' ')
+    print('============== TABELA DA SALA FECHADA ==============')
+    print(' ')
 
-g.tabela_grafo()
+    g.tabela_grafo()
 
-print(' ')
-print('============== PERCORRENDO A SALA FECHADA PARA OBTENÇÃO DO VETOR COM O CAMINHO ==============')
-print(' ')
+    print(' ')
+    print('============== PERCORRENDO A SALA FECHADA PARA OBTENÇÃO DO VETOR COM O CAMINHO ==============')
+    print(' ')
 
-g.percorre_sala(f'{entrada}', f'{saida}', True)
+    g.percorre_sala(f'{entrada}', f'{saida}', True)
 
-g.remove_portas()
+    g.remove_portas()
 
-construir_salas_fechadas(g)
-print(' ')
-print('============== PERCORRENDO A SALA ABERTA E ADICIONANDO PORTAS NECESSÁRIAS ==============')
-print(' ')
+    construir_salas_fechadas(g)
+    print(' ')
+    print('============== PERCORRENDO A SALA ABERTA E ADICIONANDO PORTAS NECESSÁRIAS ==============')
+    print(' ')
 
-g.percorre_sala(f'{entrada}', f'{saida}', False)
+    g.percorre_sala(f'{entrada}', f'{saida}', False)
 
-print(' ')
-print('============== MATRIZ DA SALA ABERTA PÓS PERCORRIDA ==============')
-print(' ')
+    print(' ')
+    print('============== MATRIZ DA SALA ABERTA PÓS PERCORRIDA ==============')
+    print(' ')
 
-g.mostra_matriz()
+    g.mostra_matriz()
 
-print(' ')
-print('============== TABELA DA SALA ABERTA PÓS PERCORRIDA ==============')
-print(' ')
+    print(' ')
+    print('============== TABELA DA SALA ABERTA PÓS PERCORRIDA ==============')
+    print(' ')
 
-g.tabela_grafo()
+    g.tabela_grafo()
 
-print(' ')
-print('=================================')
-print('A SALA DE ESPELHOS É SEGURA.')
-print('=================================')
-print(' ')
+    print(' ')
+    print('=================================')
+    print('A SALA DE ESPELHOS É SEGURA.')
+    print('=================================')
+    print(' ')
